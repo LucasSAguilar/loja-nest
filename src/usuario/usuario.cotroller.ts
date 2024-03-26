@@ -3,16 +3,17 @@ import { UsuarioRepository } from './usuario.repository';
 
 @Controller('/usuarios')
 export class UsuarioController {
-  private usuariosCadastrados = new UsuarioRepository();
+
+  constructor(private usuarioRepository: UsuarioRepository){}
 
   @Post()
   novoUsuario(@Body() usuarioEnviado) {
-    this.usuariosCadastrados.salvar(usuarioEnviado);
+    this.usuarioRepository.salvar(usuarioEnviado);
   }
 
   @Get()
   listarUsuario(){
-    return this.usuariosCadastrados.listar();
+    return this.usuarioRepository.listar();
   }
 
 }
