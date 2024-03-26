@@ -1,14 +1,11 @@
-import { Injectable } from "@nestjs/common";
-
-@Injectable()
 export class UsuarioRepository {
-  private listaUsuarios = [];
+  private usuariosCadastrados = [];
 
   salvar(usuario: object) {
-    this.listaUsuarios.push(usuario);
+    this.usuariosCadastrados.push(usuario);
   }
 
-  listar() {
-    return this.listaUsuarios;
+  coletar() {
+    return this.usuariosCadastrados;
   }
 }
