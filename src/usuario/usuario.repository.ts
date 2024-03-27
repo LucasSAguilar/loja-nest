@@ -8,4 +8,11 @@ export class UsuarioRepository {
   coletar() {
     return this.usuariosCadastrados;
   }
+
+  emailExiste(email: string) {
+    const possivelUsuario = this.usuariosCadastrados.find(
+      (usuario) => usuario.email === email,
+    );
+    return possivelUsuario;
+  }
 }
