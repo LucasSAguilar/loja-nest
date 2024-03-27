@@ -1,7 +1,9 @@
-export class UsuarioRepository {
-  private usuariosCadastrados = [];
+import { UsuarioEntity } from "./usuario.entity";
 
-  salvar(usuario: object) {
+export class UsuarioRepository {
+  private usuariosCadastrados: UsuarioEntity[] = [];
+
+  salvar(usuario: UsuarioEntity) {
     this.usuariosCadastrados.push(usuario);
   }
 
