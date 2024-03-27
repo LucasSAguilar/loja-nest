@@ -44,7 +44,6 @@ As rotas são:
 
 GET:
   http://localhost:3000/usuarios
-  Colote todos os usuarios
 
 POST:
   http://localhost:3000/usuarios
