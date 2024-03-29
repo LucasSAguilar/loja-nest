@@ -18,9 +18,9 @@ export class UsuarioRepository {
     );
     if (!possivelUsuario) {
       throw new Error('Usuário não existe');
-    }
+    };
     return possivelUsuario
-  }
+  };
 
   atualizar(id: string, dadosUsuario: Partial<UsuarioEntity>) {
 
@@ -33,22 +33,22 @@ export class UsuarioRepository {
       usuario[chave] = valor;
     });
     return usuario;
-  }
+  };
 
   deleta(id: string) {
     const usuario = this.buscaPorId(id)
 
     this.usuariosCadastrados = this.usuariosCadastrados.filter(
       usuarioSalvo => usuarioSalvo.id !== id
-    )
+    );
 
     return usuario
-  }
+  };
 
   emailExiste(email: string) {
     const possivelUsuario = this.usuariosCadastrados.find(
       (usuario) => usuario.email === email,
     );
     return possivelUsuario;
-  }
-}
+  };
+};
