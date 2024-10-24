@@ -18,6 +18,9 @@ async function bootstrap() {
   forbidNonWhitelisted: true: Além de verificar se o nome da pessoa está na lista de convidados, você também está observando atentamente para garantir que ninguém tente entrar usando um nome que não está na lista. Se alguém tenta se esgueirar sem ser detectado, você os pega imediatamente e os impede de entrar, mesmo que saibam o nome de alguém na lista. 
   */
 
-  await app.listen(3000);
+  await app.listen(3000, '0.0.0.0', ()=>{
+    console.log(`Servidor rodando na porta: 3000`);
+    
+  });
 }
 bootstrap();
